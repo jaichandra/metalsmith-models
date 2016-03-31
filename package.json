@@ -1,0 +1,26 @@
+{
+  "name": "metalsmith-models",
+  "version": "0.0.1",
+  "description": "Metalsmith plugin to include JSON models into files and expose the data as metadata on the file object.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaichandra/metalsmith-models.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "json",
+    "models"
+  ],
+  "author": "Jai Langoju <jai.chandra@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "metalsmith": "^2.1.0",
+    "metalsmith-in-place": "^1.4.3",
+    "metalsmith-layouts": "^1.6.4",
+    "metalsmith-markdown": "0.2.1"
+  }
+}
