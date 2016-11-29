@@ -7,11 +7,19 @@ module.exports = function(opts) {
 
   return function(files, metalsmith, done) {
     fileCount = 0;
+    var modelCount = 0;
+
     Object.keys(files).forEach(function(file) {
 
       var filePath;
       debug('stringifying file: %s', file);
       var data = files[file];
+
+      for (var key in data) {
+        if (key === 'model') {
+          modelCount++;
+        }
+      }
 
       if (typeof data.model === 'string') {
         filePath = metalsmith.path(dir, data.model) + '.json';
@@ -37,8 +45,11 @@ module.exports = function(opts) {
         });
       }
     });
+    if (modelCount === 0) {
+      done();
+    }
   };
-}
+};
 
 function readFile(path, metalsmith, done, callback) {
   fileCount++;
